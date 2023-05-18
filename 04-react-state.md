@@ -18,7 +18,23 @@
 
 ## Vanilla JavaScript event listener and handler
 
-- What are some of the biggest challenges when writing event listeners and handlers in vanilla javascript?
+- What are some of the biggest challenges when writing event listeners and handlers in vanilla javascript? 
+
+Some of the biggest challenges when writing event listeners and handlers in vanilla JavaScript include:
+
+Event Handling: Managing event listeners and handlers can become challenging, especially when dealing with multiple events or complex interactions. Ensuring proper event delegation, handling event propagation, and preventing unwanted event triggers can be tricky.
+
+Scope and Context: When an event listener is triggered, the context (this keyword) may change depending on how the event handler is defined. Maintaining the correct scope and accessing the desired variables or functions within the event handler can be a challenge.
+
+Event Binding: When dynamically adding or removing elements from the DOM, attaching event listeners to those elements requires careful consideration. It's important to ensure that event listeners are correctly bound to the relevant elements and are not duplicated or lost during DOM manipulation.
+
+Event Performance: Handling events efficiently is crucial for performance optimization. In scenarios with frequent event triggers, such as scrolling or mouse movements, it's important to optimize event handling to prevent performance bottlenecks and jank.
+
+Cross-browser Compatibility: Different browsers may have variations in how they handle events or support certain event types. Ensuring cross-browser compatibility and consistent behavior across different platforms can be challenging, requiring additional code or polyfills in some cases.
+
+Memory Management: It's important to properly manage event listeners to prevent memory leaks. Failing to remove event listeners when they are no longer needed can lead to memory buildup and degrade application performance.
+
+These challenges can be mitigated by using frameworks or libraries like React or jQuery, which provide abstractions and utilities for event handling, or by adopting modern JavaScript features and practices such as arrow functions, lexical scoping with const and let, and utilizing event delegation strategies.
 
 ```html
 <!-- HTML -->
@@ -37,8 +53,8 @@ button.addEventListener("click", () => {
 
 ## React event listener and handler without arguments
 
-- How does this differ from the vanilla js process?
-- What is the `changeMode` function called?
+- How does this differ from the vanilla js process? addEventListener is a method in vanilla and onClick is a prop
+- What is the `changeMode` function called? event handler
 
 ```jsx
 function App() {
@@ -56,10 +72,10 @@ function App() {
 
 ## React event listener and handler with arguments
 
-- How does adding arguments change our event listener and event handler?
+- How does adding arguments change our event listener and event handler? 
 - What is the arrow function doing inside of our `onClick`?
-- What is the arrow function called? Why is it called this?
-- What would happen if you didn't include the arrow function?
+- What is the arrow function called? Why is it called this? anonymous function because it's not named.
+- What would happen if you didn't include the arrow function? the function would be called on component load instead of the onClick event. so the console would log on page load.
 
 ```jsx
 function App() {
@@ -77,15 +93,16 @@ function App() {
 
 ## Creating state using React Hooks
 
-- Why do we import `useState` inside of brackets?
-- What does `mode` represent?
-- What does `setMode` represent?
-- Why are we passing the string `'light'` to the `useState` hook?
+- Why do we import `useState` inside of brackets? It's a named variable from 
+- What does `mode` represent? state
+- What does `setMode` represent? helper function that changes state
+- Why are we passing the string `'light'` to the `useState` hook? It sets a default state. 
 
 ```jsx
 import { useState } from "react";
 
 function App() {
+destructure useState 
   const [mode, setMode] = useState('light');
 
   // Rest of the component code
@@ -94,8 +111,8 @@ function App() {
 
 ## Updating state in React
 
-- Why are we using an if statement here?
-- What is the `setMode` function doing?
+- Why are we using an if statement here? It's determining how we are updating state and what the options are.
+- What is the `setMode` function doing? changing the state
 
 ```jsx
 function changeMode(modeChoice) {
@@ -109,7 +126,7 @@ function changeMode(modeChoice) {
 
 ## Don't change state directly
 
-- Why is it important to update the state using the helper functions provided by hooks rather than what we've grown used to in Vanilla JS?
+- Why is it important to update the state using the helper functions provided by hooks rather than what we've grown used to in Vanilla JS? The state would not update and React would not show the change in the dom
 
 ```js
 // You may find yourself tempted to do this:
@@ -121,10 +138,10 @@ setMode("light");
 
 ## Copying an Array
 
-- Does the spread operator make a shallow copy or a deep copy?
+- Does the spread operator make a shallow copy or a deep copy? Shallow copy
 - How can we use the process of copying an array to avoid changing state directly?
-- What does the `reverse()` method do?
-- What will the two logs show?
+- What does the `reverse()` method do? flip the order of numbers
+- What will the two logs show? the first array and the second array in reverse
 
 ```jsx
 const someNumsAgain = [10, 20, 30, 40];
@@ -137,9 +154,9 @@ console.log('Copied some nums again', copySomeNumsAgain);
 ## Shallow Copies
 
 - What happens to nested values in a shallow copy?
-- What is this line `const newFido = { ...dog, name: "Fido Jr." };` doing?
+- What is this line `const newFido = { ...dog, name: "Fido Jr." };` doing? Spreading 
 - What about this one `newFido.toys[0].name = "Super-sized bone";`?
-- What will the logs of `dog` and `newFido` show?
+- What will the logs of `dog` and `newFido` show? the same object
 
 ```jsx
 const dog = {
@@ -163,10 +180,10 @@ console.log(newFido);
 
 ## Deep Copying
 
-- How does a deep copy differ from a shallow copy?
-- What does `JSON.stringify()` do?
-- What does `JSON.parse()` do?
-- What will the logs of `dog` and `newFido` show?
+- How does a deep copy differ from a shallow copy? It creates a new copy in a new memory spot
+- What does `JSON.stringify()` do? Turns dog object into a string
+- What does `JSON.parse()` do? Turns string back into a object
+- What will the logs of `dog` and `newFido` show? Only newFido will show "Super-sized bone"
 
 ```jsx
 const dog = {
