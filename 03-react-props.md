@@ -11,8 +11,8 @@
 
 ## Parent component (App.js) passing props to a child component (User)
 
-- What information is being passed to the `<User />` component?
-- How would you access that information in the `User` component?
+- What information is being passed to the `<User />` component? The value of the name key from 
+- How would you access that information in the `User` component? By passing it as prop to the component
 
 ```jsx
 const App = () => {
@@ -27,9 +27,9 @@ const App = () => {
 
 ## Child component (User) accessing and rendering props
 
-- What is `const { name } = props;` doing?
-- Could you access props a different way?
-- Why do we put the variable `name` in brackets inside of our `<h1>`?
+- What is `const { name } = props;` doing? Destructuring 
+- Could you access props a different way? Paramater destructuring
+- Why do we put the variable `name` in brackets inside of our `<h1>`? Because it's a dynamic value
 
 ```jsx
 const User = (props) => {
@@ -45,8 +45,8 @@ const User = (props) => {
 
 ## Using the spread operator to pass props
 
-- What is `{...userDetails}` doing?
-- What would this look like written out?
+- What is `{...userDetails}` doing? Spread operator to spread the entire object as props. Only makes a shallow copy.
+- What would this look like written out? return <User name={userDetails.name} userID... />}
 
 ```jsx
 const App = () => {
@@ -61,10 +61,10 @@ const App = () => {
 
 ## Rendering a list of items (ProductItem) using props
 
-- What data type is `products`?
-- What does the `map` method do?
-- How does the `map` method differ in React?
-- What is `{listItems}` going to display?
+- What data type is `products`? Array of objects
+- What does the `map` method do? Make array please. The map method is used to iterate over each item in the products array and transform them into a new array of JSX elements (ProductItem components in this case).
+- How does the `map` method differ in React? In React, the map method is commonly used to generate a list of items or components based on an array of data.
+- What is `{listItems}` going to display? {listItems} is going to display an array of ProductItem components, each representing a product from the products array. The ProductItem components will have props name and price based on the corresponding values from the products array. The ul element will render these ProductItem components as list items.
 
 ```jsx
 const ProductPage = () => {
