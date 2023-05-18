@@ -12,8 +12,8 @@
 
 ## Creating a Node.js project
 
-- What does `mkdir` stand for?
-- What does `cd` stand for?
+- What does `mkdir` stand for? make directory
+- What does `cd` stand for? change directory
 
 ```bash
 mkdir my-node-project
@@ -31,8 +31,8 @@ export default message;
 
 ## Importing a Module
 
-- The import name `importedMessage` doesn't match the export name `message` from above. Is that ok?
-- Does this renaming on import change the name of the export?
+- The import name `importedMessage` doesn't match the export name `message` from above. Is that ok? Yes because that will always be the default message even if you change the name.
+- Does this renaming on import change the name of the export? No
 
 ```js
 import importedMessage from "./messages.js";
@@ -40,8 +40,8 @@ import importedMessage from "./messages.js";
 
 ## Exporting & Importing Multiple Variables
 
-- These import and export names do match, why is that?
-- Could we change them to not match?
+- These import and export names do match, why is that? No because named variables have to match
+- Could we change them to not match? Yes
 
 ```js
 // messages.js
@@ -51,8 +51,8 @@ import { message, anotherMessage } from "./messages.js";
 
 ## Renaming Imported Modules
 
-- What are some benefits of renaming imported variables?
-- What are some good conventions to follow when naming variables?
+- What are some benefits of renaming imported variables? 
+- What are some good conventions to follow when naming variables? Use descriptive, camelcase, and unique singular and plural words. Don't use acronyms, reserved keywords.
 
 ```js
 import {message as hello, anotherMessage} from "./messages.js";
@@ -60,8 +60,8 @@ import {message as hello, anotherMessage} from "./messages.js";
 
 ## Exporting a Function
 
-- What's the purpose of exporting a function?
-- How come we don't include the parameters in our export?
+- What's the purpose of exporting a function? Use that function in other components.
+- How come we don't include the parameters in our export? You don't want to call it in an export.
 
 ```js
 const customMessage = (message, name) => {
@@ -73,8 +73,8 @@ module.exports = { message, anotherMessage, customMessage };
 
 ## Importing a Function
 
-- How do we know that `customMessage` is a function?
-- Why are we passing "Nice to see you," and "Ava" to the `customMessage` function?
+- How do we know that `customMessage` is a function? You can check the export, use typeOf, or log it to the console.
+- Why are we passing "Nice to see you," and "Ava" to the `customMessage` function? Have to pass two arguments because it takes two paramaters. Function won't work without arguments.
 
 ```js
 import {
@@ -88,7 +88,7 @@ console.log(customMessage("Nice to see you,", "Ava"));
 
 ## Exporting JSON
 
-- Why isn't there an export statement anywhere?
+- Why isn't there an export statement anywhere? Data's purpose is to be exported so it doesn't need to be explicitly exported. It's done automatically.
 
 ```json
 [
@@ -112,8 +112,8 @@ console.log(customMessage("Nice to see you,", "Ava"));
 
 ## Importing JSON
 
-- What's different about importing JSON compared to other imports?
-- Do we need to `assert` the data type for JSON in the latest version of React?
+- What's different about importing JSON compared to other imports? 
+- Do we need to `assert` the data type for JSON in the latest version of React? No because create react app installs webpack which comes with JSON loader
 
 ```js
 import donuts from "./donuts.json" assert { type: "json" };
@@ -121,7 +121,7 @@ import donuts from "./donuts.json" assert { type: "json" };
 
 ## Create a Custom Script in `package.json`
 
-- What benefits can you see from creating your own scripts?
+- What benefits can you see from creating your own scripts? Creating your own npm scripts empowers you to automate tasks, customize your development workflow, improve efficiency, and maintain a consistent and manageable project environment.
 
 ```json
 // package.json
