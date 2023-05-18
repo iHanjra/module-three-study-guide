@@ -34,7 +34,7 @@
 
 ## Setting Up a New Create React App Project
 
-- How would you give this a different name, like `the-ultimate-react-portfolio`, instead?
+- How would you give this a different name, like `the-ultimate-react-portfolio`, instead? Replace my-social-media-app with whatever you want.
 
 ```bash
 npx create-react-app my-social-media-app
@@ -42,8 +42,8 @@ npx create-react-app my-social-media-app
 
 ## Starting the React App
 
-- What is `cd my-social-media-app` doing?
-- Where would you find the `npm start` script?
+- What is `cd my-social-media-app` doing? Change directory to correct folder before starting.
+- Where would you find the `npm start` script? package.json
 
 ```bash
 cd my-social-media-app
@@ -53,10 +53,10 @@ npm start
 ## A Simple __App.js__ Structure
 The following code should give you a blank but functional web page.
 
-- What is `import "./App.css";` doing?
-- Why are we using `className` instead of `class` on our `div`?
-- Why is the page blank?
-- What does `export default` do?
+- What is `import "./App.css";` doing? Styles explicity for the component with the same name.
+- Why are we using `className` instead of `class` on our `div`? Class is a reserved keyword in html. So is for(forHTML).
+- Why is the page blank? There's nothing in the app.
+- What does `export default` do? Exporting the default component of the file
 
 ```js
 import "./App.css";
@@ -71,10 +71,10 @@ export default App;
 ## Using JSX
 This code calls a function, formatName, in the embedded expression. The return value of this function, My Name, is then added to the h1 element after Hello.
 
-- Why does the function use `user.firstName` and `user.lastName` instead of just `firstName` and `lastName`?
-- What's the difference between the `user` in the function `formatName(user)` and the `const user`?
-- What data type is the `user` variable?
-- Why are there brackets around our function call `{formatName(user)}`?
+- Why does the function use `user.firstName` and `user.lastName` instead of just `firstName` and `lastName`? Because user is an object
+- What's the difference between the `user` in the function `formatName(user)` and the `const user`? The first is a variable and the second is an argument that's passed as a paramater.
+- What data type is the `user` variable? Object
+- Why are there brackets around our function call `{formatName(user)}`? Curly braces are used to pass a dynamic value into JSX or HTML.
 
 ```js
 function formatName(user) {
@@ -91,8 +91,8 @@ const hello = <h1>Hello, {formatName(user)}!</h1>;
 
 ## Child Components
 
-- What is the purpose of the empty brackets `<></>`? What are they called?
-- If you removed the parenthesis from `return (...);` would the code still work? Why or why not?
+- What is the purpose of the empty brackets `<></>`? What are they called? React fragments. Group elements together without additional elements like div. React components can only return one element in the DOM.
+- If you removed the parenthesis from `return (...);` would the code still work? Why or why not? No because it needs to encapsulate the return statement unless it's one line.
 
 ```js
 // src/ContactList.js
@@ -111,9 +111,9 @@ export default function ContactList() {
 }
 ```
 
-- Does the `import` name `ContactList` need to match the name of the component?
-- Why isn't the import name `ContactList` inside curly brackets?
-- Why is the implementation of the component `<ContactList />` self-closed? When should it not be self-closed?
+- Does the `import` name `ContactList` need to match the name of the component? No because it's a default export.
+- Why isn't the import name `ContactList` inside curly brackets? Because its's a default export. Curly braces are used for named exports, where you import specific members of a module.
+- Why is the implementation of the component `<ContactList />` self-closed? When should it not be self-closed? In JSX, self-closing syntax is used when a component does not have any children. If a component has children elements or content, it should not be self-closed.
 
 ```js
 // src/App.js
@@ -133,8 +133,8 @@ export default App;
 
 ## Duplicating Components
 
-- What would happen if we replaced all the dynamic data in `Post.js` with static data?
-- What would show on the page if we duplicated the `<ContactList />` component?
+- What would happen if we replaced all the dynamic data in `Post.js` with static data? It would be two of the same exact post.
+- What would show on the page if we duplicated the `<ContactList />` component? There would be two contactlists with the same information.
 
 ```js
 // src/Post.js
