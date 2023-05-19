@@ -9,10 +9,10 @@
 
 ## Checkboxes
 
-- What is `checked={checked}` doing?
-- What is `setChecked(!checked)` doing?
-- What happens if we forget the `onChange` event listener?
-- What's controlling the checkbox: React or the Browser?
+- What is `checked={checked}` doing? Passing the default state to the input element 
+- What is `setChecked(!checked)` doing? Changing state to true
+- What happens if we forget the `onChange` event listener? Nothing will happen when the user clicks on checkbox. React will throw an error.
+- What's controlling the checkbox: React or the Browser? React because it's controlled by state.
 
 ```js
 // State
@@ -29,9 +29,9 @@ function handleCheckboxChange() {
 
 ## Select Dropdowns
 
-- What is the default value of `selectOption`? Why?
-- Why are we setting the `selectOption` to `event.target.value`?
-- The option value `cats` doesn't match the option display `Cats!`. Is that ok?
+- What is the default value of `selectOption`? Why? Empty because the default state was set to empty string.
+- Why are we setting the `selectOption` to `event.target.value`? 
+- The option value `cats` doesn't match the option display `Cats!`. Is that ok? Yes because the value is the only that 
 
 ```js
 // State
@@ -43,7 +43,7 @@ function handleSelectChange(event) {
 }
 
 // JSX
-<select onChange={handleSelectChange}>
+<select value={selectOption} onChange={handleSelectChange}>
   <option value=""></option>
   <option value="cats">Cats!</option>
   <option value="dogs">Dogs!</option>
@@ -52,8 +52,8 @@ function handleSelectChange(event) {
 
 ## Text Inputs
 
-- What is missing from this text input?
-- When does the `onChange` event trigger?
+- What is missing from this text input? value={nickName}. also needs name and id.
+- When does the `onChange` event trigger? Whenever the user types into the form field.
 
 ```js
 // State
@@ -70,8 +70,8 @@ function handleNickNameChange(event) {
 
 ## Form Submission
 
-- When does the `onSubmit` event trigger?
-- What does `event.preventDefault()` do?
+- When does the `onSubmit` event trigger? When the user clicks on submit.
+- What does `event.preventDefault()` do? Stop the page from reloading on submit, reset the form, or add form info to url.
 
 ```jsx
 // Event Handler
@@ -88,11 +88,11 @@ function handleSubmit(event) {
 
 ## Multiple text inputs with a shared change handler
 
-- What data type is the `user` state?
-- Why are we using curly braces when we invoke `setUser({...})`?
-- What does `...user` accomplish?
-- What's is this `[event.target.id]: event.target.value` doing?
-- What other input attribute could you use instead of `id`?
+- What data type is the `user` state? Object
+- Why are we using curly braces when we invoke `setUser({...})`? Creates a new object
+- What does `...user` accomplish? The key value pairs from the original user is added to the new user object
+- What's is this `[event.target.id]: event.target.value` doing? Updating the key value pairs in the new user object.
+- What other input attribute could you use instead of `id`? Name
 
 ```js
 // State
