@@ -45,8 +45,8 @@
 
 ## Example .env file
 
-- What type of information should you store in a `.env` file?
-- What are some of the benefits of using a `.env` file to store this information?
+- What type of information should you store in a `.env` file? API keys, sensitive information, configuration settings
+- What are some of the benefits of using a `.env` file to store this information? Security and codebase cleanliness,
 
 ```bash
 REACT_APP_API_KEY=123456789
@@ -55,8 +55,8 @@ REACT_APP_API_URL=https://api.example.com
 
 ## Using environment variables in React
 
-- What is `process`?
-- The `fetch` snippet is a common pattern for what development action?
+- What is `process`? A global object in node.js injected at runtime
+- The `fetch` snippet is a common pattern for what development action? To get data from an API
 
 ```js
 const apiKey = process.env.REACT_APP_API_KEY;
