@@ -10,7 +10,7 @@
 
 ## Adding Bootstrap CSS link in `public/index.html`
 
-- Why do we add this link to the `public/index.html` file instead of the `index.js` or `App.js` files?
+- Why do we add this link to the `public/index.html` file instead of the `index.js` or `App.js` files? Because it's the root.
 
 ```html
 <head>
@@ -26,8 +26,8 @@
 
 ## Example usage of Bootstrap CSS classes in a React component
 
-- What is a `container` as it relates to page layouts?
-- What does the `btn-primary` class do?
+- What is a `container` as it relates to page layouts? Provides a grid format and responsive and fixed width and centers.
+- What does the `btn-primary` class do? Adds a color theme.
 
 ```js
 import React from 'react';
@@ -47,11 +47,11 @@ export default MyComponent;
 
 ## Bootstrap Grid
 
-- What display property is the Bootstrap grid built on?
-- What's the relationship between the `container`, `row`, and `col-md-4`?
-- How would we break down the `col-md-4` class?
-- How many columns is the Bootstrap grid based on?
-- How would we nest grids in Bootstrap?
+- What display property is the Bootstrap grid built on? Display: flex
+- What's the relationship between the `container`, `row`, and `col-md-4`? The container holds the entire grid layout, the row creates a new row within the container, and the col-md-4 defines individual columns within the row. 
+- How would we break down the `col-md-4` class? This column will be 4 columns wide from medium size screens up
+- How many columns is the Bootstrap grid based on? 12
+- How would we nest grids in Bootstrap? Create another set of row and col elements within an existing column. This allows you to create more complex grid structures by dividing columns into smaller sections.
 
 ```js
 import React from 'react';
