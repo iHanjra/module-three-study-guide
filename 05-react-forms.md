@@ -125,8 +125,8 @@ function handleTextChange(event) {
 
 ## Resetting the form
 
-- What is the `resetForm()` doing to the state?
-- Are we updating the object directly? How can you tell?
+- What is the `resetForm()` doing to the state? The resetForm() function is responsible for resetting the state of the user object to empty values after the form is submitted. It accomplishes this by calling setUser() and passing in an empty object as the new state value.
+- Are we updating the object directly? How can you tell? We are not updating the object directly. Instead, we are using the setUser() function to update the state. This is evident from the setUser() function being called within the resetForm() function and passing in a new object with empty values as the argument. React will handle the update of the state object based on the new value passed to setUser().
 
 ```js
 function resetForm() {
