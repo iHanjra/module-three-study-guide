@@ -25,18 +25,18 @@
 
 ## Data flow and management in React
 
-- What are the advantages of a downward data flow?
-- What do we use to send data upwards?
+- What are the advantages of a downward data flow? Don't pollute global variables.
+- What do we use to send data upwards? Event handler
 
 ![](./images/lift-state.png)
 
 ## Lifting State
 
-- What `state` is being controlled by the `App.js`?
-- What is the default value of our `state`?
-- What code represents our `event handler`?
-- What `state` is being passed down as `props` and to which components?
-- How do we expect the state to be `lifted`?
+- What `state` is being controlled by the `App.js`? Color
+- What is the default value of our `state`? White
+- What code represents our `event handler`? chooseColor
+- What `state` is being passed down as `props` and to which components? Color is being passed to aside and sketchpad
+- How do we expect the state to be `lifted`? Palette because that's where the event handler is being used.
 
 ```jsx
 // src/App.js
@@ -62,13 +62,13 @@ function App() {
 }
 ```
 
-- The `Square` component isn't called in the `App.js` file. Which component can we assume its getting its props from based on the example above?
-- What is the purpose of the `key` attribute? Why is it set to `color`?
-- What `event listener` does the `Square` component use?
-- What `event handler` does the event listener call?
-- Where is the `event handler` defined?
-- What is being `lifted` from this component?
-- What component is it being `lifted` to?
+- The `Square` component isn't called in the `App.js` file. Which component can we assume its getting its props from based on the example above? App.js
+- What is the purpose of the `key` attribute? Why is it set to `color`? Uniquely identify elements in a list. Need for children of a loop.
+- What `event listener` does the `Square` component use? onClick
+- What `event handler` does the event listener call? chooseColor
+- Where is the `event handler` defined? App.js and then passed as prop to square.js
+- What is being `lifted` from this component? color
+- What component is it being `lifted` to? App.js
 
 ```js
 // src/Square.js
